@@ -36,8 +36,8 @@ shader_parameter/wave_size = Vector2(2, 2)
 shader_parameter/wave_speed = 1.5
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_3qbo7"]
-vertices = PackedVector3Array(3.59862, 2, 4.86697, 4.59862, 2, 4.36697, 3.59862, 2, 4.11697, 5.59862, 2, 7.11697, 5.59862, 2, 6.36697, 3.59862, 2, 6.11697, 6.59862, 2, 11.617, 6.59862, 2, 7.36697, 5.59862, 2, 7.11697, 6.59862, 2, 11.617, 5.59862, 2, 7.11697, 3.59862, 2, 6.11697, -0.151379, 2, 11.617, 3.59862, 2, 4.11697, 3.59862, 2, 0.366972, -6.65138, 2, 0.366972, -6.65138, 2, 11.617, -0.151379, 2, 11.617, -0.151379, 2, 11.617, 3.59862, 2, 6.11697, 3.59862, 2, 4.86697, -0.151379, 2, 11.617, 3.59862, 2, 4.86697, 3.59862, 2, 4.11697)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(6, 8, 7), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(13, 17, 14), PackedInt32Array(14, 17, 16), PackedInt32Array(14, 16, 15), PackedInt32Array(20, 19, 18), PackedInt32Array(23, 22, 21)]
+vertices = PackedVector3Array(-6.65138, 2, 0.366972, -6.65138, 2, 11.617, -0.151379, 2, 11.617, -0.151379, 2, 0.366972, -0.151379, 2, 11.617, 6.59862, 2, 11.617, 6.59862, 2, 0.366972, -0.151379, 2, 0.366972)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5)]
 
 [node name="World" type="Node3D"]
 
@@ -51,16 +51,16 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment"]
+visible = false
 mesh = SubResource("PlaneMesh_40gmp")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_ka738")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_b1yvn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.663345, 2.52656, 3.96493)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.663345, 2.67168, 3.27225)
 
 [node name="character_camera" parent="CharacterBody3D" instance=ExtResource("3_01oab")]
 transform = Transform3D(1, 0, 0, 0, 0.953717, 0.300706, 0, -0.300706, 0.953717, 0, 2.64387, 4.20638)
-current = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_3qbo7")
@@ -74,16 +74,12 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="NavigationLink3D" type="NavigationLink3D" parent="NavigationRegion3D/GridMap"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97758, 9.50829)
-start_position = Vector3(-3.54737, -0.159365, -3.22907)
-end_position = Vector3(3.09983, -0.188704, -8.7663)
-
 [node name="Enemy" parent="." instance=ExtResource("5_3meyn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2695, 3.16844, 10.3756)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89419, 2.68278, 7.20984)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8852, 18.0068)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41686, 4.8852, 14.7637)
+current = true
 
 [node name="AOI" parent="." instance=ExtResource("6_wcs6q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42765, 2.7233, 10.009)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42765, 2.49215, 10.009)
