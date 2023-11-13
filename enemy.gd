@@ -30,7 +30,7 @@ func get_target():
 		if len(targets.values()) > 0:
 			curr_target = targets.values()[0]
 	return null
-	
+
 func _on_area_3d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	targets[area_rid] = area
 
