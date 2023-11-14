@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @onready var nav_agent = $NavigationAgent3D
-const SPEED = 5.0
+const SPEED = 2
 const JUMP_VELOCITY = 4.5
 @onready var targets:Dictionary = {}
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -19,7 +19,7 @@ func _physics_process(delta):
 		nav_agent.target_position = target.owner.global_position
 		var target_position = nav_agent.get_next_path_position()
 		var direction = global_position.direction_to(target_position)
-		velocity = direction * 5
+		velocity = direction * SPEED
 	
 	move_and_slide()
 
